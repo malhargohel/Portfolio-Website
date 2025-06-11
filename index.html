@@ -32,29 +32,203 @@
             transform: translateY(-5px);
         }
         .section-title {
-    font-size: 3.75rem; /* text-6xl */
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 5rem;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: linear-gradient(to right, #22d3ee, #3b82f6); /* from-cyan-400 to-blue-500 */
-}
-.primary-btn {
-    background-image: linear-gradient(to right, #06b6d4, #2563eb); /* from-cyan-500 to-blue-600 */
-    color: #fff;
-    padding: 1.25rem 3rem;
-    border-radius: 9999px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    transition: all 0.3s;
-    box-shadow: 0 10px 15px -3px rgba(34,211,238,0.2);
-}
-.primary-btn:hover {
-    background-image: linear-gradient(to right, #22d3ee, #3b82f6);
-    transform: scale(1.05);
-}
+            font-size: 3.75rem; /* text-6xl */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5rem;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-image: linear-gradient(to right, #22d3ee, #3b82f6); /* from-cyan-400 to-blue-500 */
+        }
+        .primary-btn {
+            background-image: linear-gradient(to right, #06b6d4, #2563eb); /* from-cyan-500 to-blue-600 */
+            color: #fff;
+            padding: 1.25rem 3rem;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(34,211,238,0.2);
+        }
+        .primary-btn:hover {
+            background-image: linear-gradient(to right, #22d3ee, #3b82f6);
+            transform: scale(1.05);
+        }
+
+        /* Futuristic Avatar Styles */
+        .futuristic-avatar {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 4rem;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00d4ff, #091057, #7c3aed, #00d4ff);
+            background-size: 400% 400%;
+            animation: gradientShift 4s ease-in-out infinite;
+            padding: 4px;
+        }
+
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #0a0a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar-content {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #22d3ee;
+            text-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+            z-index: 2;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 50%;
+            animation: rotate 8s linear infinite;
+        }
+
+        .orbit-ring-1 {
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            border-top-color: rgba(34, 211, 238, 0.8);
+        }
+
+        .orbit-ring-2 {
+            width: 180%;
+            height: 180%;
+            top: -40%;
+            left: -40%;
+            border-right-color: rgba(147, 51, 234, 0.6);
+            animation-direction: reverse;
+            animation-duration: 12s;
+        }
+
+        .orbit-ring-3 {
+            width: 210%;
+            height: 210%;
+            top: -55%;
+            left: -55%;
+            border-left-color: rgba(34, 211, 238, 0.4);
+            animation-duration: 16s;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #22d3ee;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 6px rgba(34, 211, 238, 0.8);
+        }
+
+        .particle:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 60%; left: 70%; animation-delay: 1s; }
+        .particle:nth-child(3) { top: 40%; left: 20%; animation-delay: 2s; }
+        .particle:nth-child(4) { top: 80%; left: 50%; animation-delay: 3s; }
+        .particle:nth-child(5) { top: 10%; left: 80%; animation-delay: 4s; }
+
+        .hologram-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(34, 211, 238, 0.1) 45%,
+                rgba(34, 211, 238, 0.2) 50%,
+                rgba(34, 211, 238, 0.1) 55%,
+                transparent 100%
+            );
+            animation: scan 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(34, 211, 238, 0.6), 0 0 60px rgba(34, 211, 238, 0.4); }
+        }
+
+        .avatar-container:hover {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Simplified Skills grid styling */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            max-width: 64rem;
+            margin: 0 auto;
+            justify-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .futuristic-avatar {
+                width: 128px;
+                height: 128px;
+            }
+            .avatar-content {
+                font-size: 2.5rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="aurora-bg">
@@ -82,7 +256,24 @@
         <section id="hero" class="py-24 md:py-40">
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-4xl mx-auto">
-                    <img src="https://placehold.co/150x150/E2E8F0/4A5568?text=MG" alt="Malhar Gohel" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-8 shadow-2xl border-4 border-cyan-500/50">
+                    <!-- Futuristic Avatar -->
+                    <div class="futuristic-avatar">
+                        <div class="orbit-ring orbit-ring-1"></div>
+                        <div class="avatar-container">
+                            <div class="avatar-inner">
+                                <div class="avatar-content">MG</div>
+                                <div class="hologram-effect"></div>
+                                <div class="floating-particles">
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                    <div class="particle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">Hi, I'm Malhar</h1>
                     <p class="text-lg md:text-xl text-cyan-400 font-semibold mb-8">Software Engineering Student</p>
                     <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-12">I'm passionate about building interesting projects to deepen my understanding of different coding languages and technologies. Welcome to my corner of the internet!</p>
@@ -138,43 +329,54 @@
             </div>
         </section>
 
-        <section id="skills" class="py-20">
-            <div class="container mx-auto text-center px-6">
-                <p class="text-lg md:text-4xl text-cyan-400 font-semibold mb-8">Technical Skills</p>
-                <div class="max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 text-center">
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-html5 fa-3x text-orange-500"></i> <span class="font-medium text-gray-300">HTML5</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-css3-alt fa-3x text-blue-500"></i> <span class="font-medium text-gray-300">CSS3</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-js-square fa-3x text-yellow-500"></i> <span class="font-medium text-gray-300">JavaScript</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-react fa-3x text-cyan-400"></i> <span class="font-medium text-gray-300">React</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-node-js fa-3x text-green-500"></i> <span class="font-medium text-gray-300">Node.js</span>
-                    </div>
-                     <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fas fa-database fa-3x text-cyan-300"></i> <span class="font-medium text-gray-300">SQL</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-git-alt fa-3x text-red-500"></i> <span class="font-medium text-gray-300">Git</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                         <i class="fab fa-python fa-3x text-blue-400"></i> <span class="font-medium text-gray-300">Python</span>
-                    </div>
-                     <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-docker fa-3x text-blue-600"></i> <span class="font-medium text-gray-300">Docker</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-3 p-4 skill-icon">
-                        <i class="fab fa-java fa-3x text-red-400"></i> <span class="font-medium text-gray-300">Java</span>
-                    </div>
+<section id="skills" class="py-20">
+    <div class="container mx-auto text-center px-6">
+        <p class="text-lg md:text-4xl text-cyan-400 font-semibold mb-8">Technical Skills</p>
+        <div class="grid grid-cols-5 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            <!-- Top Row: 5 items -->
+            <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                <i class="fab fa-html5 fa-3x text-orange-500"></i>
+                <span class="font-medium text-gray-300">HTML5</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                <i class="fab fa-css3-alt fa-3x text-blue-500"></i>
+                <span class="font-medium text-gray-300">CSS3</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                <i class="fab fa-js-square fa-3x text-yellow-500"></i>
+                <span class="font-medium text-gray-300">JavaScript</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                <i class="fab fa-react fa-3x text-cyan-400"></i>
+                <span class="font-medium text-gray-300">React</span>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                <i class="fab fa-node-js fa-3x text-green-500"></i>
+                <span class="font-medium text-gray-300">Node.js</span>
+            </div>
+            
+            <!-- Bottom Row: 4 items centered -->
+            <div class="col-span-5 grid grid-cols-4 gap-1 mt-4">
+                <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                    <i class="fab fa-git-alt fa-3x text-red-500"></i>
+                    <span class="font-medium text-gray-300">Git</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                    <i class="fab fa-python fa-3x text-blue-400"></i>
+                    <span class="font-medium text-gray-300">Python</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                    <i class="fab fa-java fa-3x text-red-400"></i>
+                    <span class="font-medium text-gray-300">Java</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-4 skill-item">
+                    <i class="fas fa-database fa-3x text-cyan-300"></i>
+                    <span class="font-medium text-gray-300">SQL</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="bg-black/20 py-12">
@@ -183,7 +385,6 @@
                 <a href="https://github.com/malhargohel" class="text-gray-400 hover:text-cyan-400 transition duration-300"><i class="fab fa-github fa-2x"></i></a>
                 <a href="https://www.linkedin.com/in/malhar-gohel/" class="text-gray-400 hover:text-cyan-400 transition duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
-            <p class="text-gray-500">&copy; 2025 Malhar Gohel. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -227,3 +428,4 @@
             },
         },
     };
+</script>
