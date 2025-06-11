@@ -32,20 +32,28 @@
             transform: translateY(-5px);
         }
         .section-title {
-            @apply text-6xl md:text-7xl font-bold text-center mb-20 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500;
-        }
-        .skill-icon {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-        }
-        .skill-icon:hover {
-            background: rgba(0, 225, 255, 0.1);
-            transform: scale(1.05);
-        }
-        .primary-btn {
-            @apply bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-12 py-5 rounded-full text-2xl font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/20;
-        }
+    font-size: 3.75rem; /* text-6xl */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5rem;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, #22d3ee, #3b82f6); /* from-cyan-400 to-blue-500 */
+}
+.primary-btn {
+    background-image: linear-gradient(to right, #06b6d4, #2563eb); /* from-cyan-500 to-blue-600 */
+    color: #fff;
+    padding: 1.25rem 3rem;
+    border-radius: 9999px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 10px 15px -3px rgba(34,211,238,0.2);
+}
+.primary-btn:hover {
+    background-image: linear-gradient(to right, #22d3ee, #3b82f6); /* hover:from-cyan-400 hover:to-blue-500 */
+    transform: scale(1.05);
     </style>
 </head>
 <body class="aurora-bg">
@@ -204,3 +212,17 @@
     </script>
 </body>
 </html>
+<script>
+    // Tailwind CSS configuration for custom styles
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'cyan-400': '#22d3ee',
+                    'blue-500': '#3b82f6',
+                    'cyan-500': '#06b6d4',
+                    'blue-600': '#2563eb',
+                },
+            },
+        },
+    };
